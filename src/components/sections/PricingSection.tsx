@@ -34,22 +34,7 @@ const PricingSection = () => {
       cta: "Prueba el plan Pro gratis",
       popular: true
     },
-    {
-      name: "Plan Empresarial",
-      subtitle: "Negocios con múltiples sedes",
-      price: "Contacta",
-      period: "a ventas",
-      features: [
-        "Usuarios ilimitados",
-        "Gestión de múltiples ubicaciones",
-        "Soporte 24/7",
-        "Integraciones avanzadas",
-        "Reportes personalizados",
-        "Soluciones a medida"
-      ],
-      cta: "Solicita tu cotización",
-      popular: false
-    }
+    
   ];
 
   return (
@@ -64,7 +49,7 @@ const PricingSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
             <div 
               key={index}

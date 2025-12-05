@@ -77,7 +77,7 @@ const FAQSection = () => {
         </div>
 
         {/* Additional Help */}
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <div className="bg-neutral-50 rounded-2xl p-8 max-w-2xl mx-auto">
             <h3 className="text-xl font-semibold mb-3">
               ¿No encuentras tu respuesta?
@@ -94,7 +94,7 @@ const FAQSection = () => {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

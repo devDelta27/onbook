@@ -108,9 +108,9 @@ const SocialProofSection = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="bg-primary text-white rounded-3xl p-8 mb-16">
+        {/* <div className="bg-primary text-white rounded-3xl p-8 mb-16">
           <h3 className="text-2xl font-bold text-center mb-8">
-            Números que hablan por sí solos
+            5 que hablan por sí solos
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
             {stats.map((stat, index) => {
@@ -126,7 +126,7 @@ const SocialProofSection = () => {
               );
             })}
           </div>
-        </div>
+        </div> */}
 
         {/* Client Logos */}
         <div className="text-center">

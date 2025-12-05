@@ -15,26 +15,15 @@ const FooterSection = () => {
       { name: "API Docs", href: "#api" },
       { name: "Estado del sistema", href: "#status" }
     ],
-    empresa: [
-      { name: "Sobre ONCORP", href: "#about" },
-      { name: "Casos de éxito", href: "#cases" },
-      { name: "Blog", href: "#blog" },
-      { name: "Careers", href: "#careers" }
-    ],
-    legal: [
+        legal: [
       { name: "Términos de uso", href: "#terms" },
       { name: "Política de privacidad", href: "#privacy" },
       { name: "Cookies", href: "#cookies" },
-      { name: "GDPR", href: "#gdpr" }
+      
     ]
   };
 
-  const socialLinks = [
-    { name: "Facebook", icon: Facebook, href: "#" },
-    { name: "Instagram", icon: Instagram, href: "#" },
-    { name: "LinkedIn", icon: Linkedin, href: "#" },
-    { name: "Twitter", icon: Twitter, href: "#" }
-  ];
+ 
 
   return (
     <footer className="bg-neutral-900 text-white">
@@ -89,25 +78,12 @@ const FooterSection = () => {
               </div>
               <div className="flex items-center gap-3 text-sm text-neutral-400">
                 <MapPin className="h-4 w-4 text-accent" />
-                San José, Costa Rica
+                Tegucigalpa, Honduras
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-4">
-              {socialLinks.map((social, index) => {
-                const IconComponent = social.icon;
-                return (
-                  <a
-                    key={index}
-                    href={social.href}
-                    className="w-10 h-10 bg-neutral-800 rounded-xl flex items-center justify-center hover:bg-accent transition-colors group"
-                  >
-                    <IconComponent className="h-5 w-5 text-neutral-400 group-hover:text-white" />
-                  </a>
-                );
-              })}
-            </div>
+            
           </div>
 
           {/* Links Sections */}
@@ -138,18 +114,7 @@ const FooterSection = () => {
               </ul>
             </div>
 
-            <div>
-              <h4 className="font-semibold mb-4">Empresa</h4>
-              <ul className="space-y-3">
-                {footerLinks.empresa.map((link, index) => (
-                  <li key={index}>
-                    <a href={link.href} className="text-neutral-400 hover:text-accent transition-colors text-sm">
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+           
 
             <div>
               <h4 className="font-semibold mb-4">Legal</h4>

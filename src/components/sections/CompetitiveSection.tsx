@@ -133,24 +133,7 @@ const CompetitiveSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-accent to-success p-8 rounded-3xl max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              ¿Por qué conformarte con menos?
-            </h3>
-            <p className="text-xl text-white/90 mb-6">
-              Elige la herramienta que realmente entiende tu negocio
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-accent font-semibold px-8 py-3 rounded-xl hover:bg-white/90 transition-colors">
-                Ver diferencias completas
-              </button>
-              <button className="bg-white/20 text-white font-medium px-8 py-3 rounded-xl hover:bg-white/30 transition-colors">
-                Hablar con un experto
-              </button>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </section>
   );
