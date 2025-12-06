@@ -1,29 +1,66 @@
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Link } from "react-router-dom"; // Importante: Importar Link
 
 const FooterSection = () => {
   const footerLinks = {
     producto: [
-      { name: "Características", href: "#features" },
-      { name: "Precios", href: "#pricing" },
-      { name: "Demo en vivo", href: "#demo" },
-      { name: "Integraciones", href: "#integrations" }
+      { name: "Características", href: "/#features" },
+      { name: "Precios", href: "/#pricing" },
+      { name: "Demo en vivo", href: "/#demo" },
+      { name: "Integraciones", href: "/#integrations" }
     ],
     soporte: [
-      { name: "Centro de ayuda", href: "#help" },
-      { name: "Tutoriales", href: "#tutorials" },
-      { name: "API Docs", href: "#api" },
-      { name: "Estado del sistema", href: "#status" }
+      { name: "Centro de ayuda", href: "/#help" },
+      { name: "Tutoriales", href: "/#tutorials" },
+      { name: "API Docs", href: "/#api" },
+      { name: "Estado del sistema", href: "/#status" }
     ],
-        legal: [
-      { name: "Términos de uso", href: "#terms" },
-      { name: "Política de privacidad", href: "#privacy" },
-      { name: "Cookies", href: "#cookies" },
-      
+    // AQUÍ ESTÁ LA CLAVE: Rutas absolutas con "/" al inicio
+    legal: [
+      { name: "Términos de uso", href: "/terms" },
+      { name: "Política de privacidad", href: "/privacy" },
+      { name: "Cookies", href: "/cookies" },
     ]
   };
 
- 
+  const socialLinks = [
+    { name: "Facebook", icon: Facebook, href: "#" },
+    { name: "Instagram", icon: Instagram, href: "#" },
+    { name: "LinkedIn", icon: Linkedin, href: "#" },
+    { name: "Twitter", icon: Twitter, href: "#" }
+  ];
+
+  // Función auxiliar para saber si es un link interno (router) o externo (ancla/http)
+  const renderLink = (link: { name: string; href: string }) => {
+    // Si el link empieza con "/", usamos el componente Link de React para navegación SPA
+    // Si es un ancla pura "#" o externo, usamos <a>
+    // Para los legales (/terms, etc) usará Link.
+    
+    // Nota: Las secciones de la home (#features) las he puesto como /#features para que si estás en /terms te lleve a la home.
+    
+    const isInternalPage = link.href.startsWith("/") && !link.href.includes("#");
+
+    if (isInternalPage) {
+      return (
+        <Link 
+          to={link.href} 
+          className="text-neutral-400 hover:text-accent transition-colors text-sm"
+        >
+          {link.name}
+        </Link>
+      );
+    }
+
+    return (
+      <a 
+        href={link.href} 
+        className="text-neutral-400 hover:text-accent transition-colors text-sm"
+      >
+        {link.name}
+      </a>
+    );
+  };
 
   return (
     <footer className="bg-neutral-900 text-white">
@@ -78,12 +115,25 @@ const FooterSection = () => {
               </div>
               <div className="flex items-center gap-3 text-sm text-neutral-400">
                 <MapPin className="h-4 w-4 text-accent" />
-                Tegucigalpa, Honduras
+                San José, Costa Rica
               </div>
             </div>
 
             {/* Social Links */}
-            
+            <div className="flex gap-4">
+              {socialLinks.map((social, index) => {
+                const IconComponent = social.icon;
+                return (
+                  <a
+                    key={index}
+                    href={social.href}
+                    className="w-10 h-10 bg-neutral-800 rounded-xl flex items-center justify-center hover:bg-accent transition-colors group"
+                  >
+                    <IconComponent className="h-5 w-5 text-neutral-400 group-hover:text-white" />
+                  </a>
+                );
+              })}
+            </div>
           </div>
 
           {/* Links Sections */}
@@ -92,11 +142,7 @@ const FooterSection = () => {
               <h4 className="font-semibold mb-4">Producto</h4>
               <ul className="space-y-3">
                 {footerLinks.producto.map((link, index) => (
-                  <li key={index}>
-                    <a href={link.href} className="text-neutral-400 hover:text-accent transition-colors text-sm">
-                      {link.name}
-                    </a>
-                  </li>
+                  <li key={index}>{renderLink(link)}</li>
                 ))}
               </ul>
             </div>
@@ -105,11 +151,7 @@ const FooterSection = () => {
               <h4 className="font-semibold mb-4">Soporte</h4>
               <ul className="space-y-3">
                 {footerLinks.soporte.map((link, index) => (
-                  <li key={index}>
-                    <a href={link.href} className="text-neutral-400 hover:text-accent transition-colors text-sm">
-                      {link.name}
-                    </a>
-                  </li>
+                  <li key={index}>{renderLink(link)}</li>
                 ))}
               </ul>
             </div>
@@ -120,11 +162,7 @@ const FooterSection = () => {
               <h4 className="font-semibold mb-4">Legal</h4>
               <ul className="space-y-3">
                 {footerLinks.legal.map((link, index) => (
-                  <li key={index}>
-                    <a href={link.href} className="text-neutral-400 hover:text-accent transition-colors text-sm">
-                      {link.name}
-                    </a>
-                  </li>
+                  <li key={index}>{renderLink(link)}</li>
                 ))}
               </ul>
             </div>

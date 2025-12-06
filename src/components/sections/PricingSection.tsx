@@ -38,7 +38,7 @@ const PricingSection = () => {
   ];
 
   return (
-    <section className="section-padding section-gradient">
+   <section id="pricing" className="section-padding section-gradient">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-section-title mb-6">

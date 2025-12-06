@@ -3,6 +3,12 @@ import { ArrowRight, Play } from "lucide-react";
 import heroImage from "@/assets/hero-chaos-control.jpg";
 
 const HeroSection = () => {
+  const scrollToPricing = () => {
+    const pricingSection = document.getElementById("pricing");
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with gradient overlay */}
@@ -38,7 +44,11 @@ const HeroSection = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-up">
-            <Button size="lg" className="btn-hero group">
+            <Button 
+              size="lg" 
+              className="btn-hero group"
+              onClick={scrollToPricing} // CAMBIO AQUÍ: Agregamos el evento onClick
+            >
               Transforma tu negocio en 15 minutos
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>

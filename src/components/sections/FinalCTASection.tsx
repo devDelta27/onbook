@@ -2,6 +2,12 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, Shield, Star } from "lucide-react";
 
 const FinalCTASection = () => {
+  const scrollToPricing = () => {
+    const pricingSection = document.getElementById("pricing");
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <section className="section-padding bg-gradient-to-br from-primary via-primary to-accent text-white overflow-hidden relative">
       {/* Background Elements */}
@@ -66,6 +72,7 @@ const FinalCTASection = () => {
             </Button>
             
             <Button 
+            onClick={scrollToPricing}
               size="lg" 
               variant="ghost" 
               className="text-white border-2 border-white/30 hover:bg-white/10 font-semibold px-8 py-4 rounded-xl"
