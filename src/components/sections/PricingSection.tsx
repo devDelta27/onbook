@@ -16,7 +16,9 @@ const PricingSection = () => {
         "Soporte por email"
       ],
       cta: "Empieza a organizar tu agenda",
-      popular: false
+      popular: false,
+      // PEGA AQUÍ TU ENLACE DE STRIPE DEL PLAN ESENCIAL
+      link: "https://buy.stripe.com/test_..." 
     },
     {
       name: "Plan Pro",
@@ -32,13 +34,32 @@ const PricingSection = () => {
         "Soporte prioritario"
       ],
       cta: "Prueba el plan Pro gratis",
-      popular: true
+      popular: true,
+      // PEGA AQUÍ TU ENLACE DE STRIPE DEL PLAN PRO
+      link: "https://buy.stripe.com/test_..." 
     },
-    
+    {
+      name: "Plan Empresarial",
+      subtitle: "Negocios con múltiples sedes",
+      price: "Contacta",
+      period: "a ventas",
+      features: [
+        "Usuarios ilimitados",
+        "Gestión de múltiples ubicaciones",
+        "Soporte 24/7",
+        "Integraciones avanzadas",
+        "Reportes personalizados",
+        "Soluciones a medida"
+      ],
+      cta: "Solicita tu cotización",
+      popular: false,
+      // Para empresarial usamos mailto o un link a WhatsApp
+      link: "mailto:ventas@onbook.oncorp.io?subject=Consulta Plan Empresarial"
+    }
   ];
 
   return (
-   <section id="pricing" className="section-padding section-gradient">
+    <section id="pricing" className="section-padding section-gradient">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-section-title mb-6">
@@ -49,7 +70,7 @@ const PricingSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
             <div 
               key={index}
@@ -69,6 +90,8 @@ const PricingSection = () => {
 
                 <Button 
                   className={`w-full ${plan.popular ? 'btn-hero' : 'bg-primary hover:bg-primary/90'}`}
+                  // AQUÍ ESTÁ LA MAGIA: Al hacer clic, abre el link de Stripe
+                  onClick={() => window.open(plan.link, '_blank')}
                 >
                   {plan.cta}
                   {index === 2 ? (

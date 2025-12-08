@@ -10,7 +10,7 @@ import NotFound from "./pages/NotFound";
 import TermsOfService from "./pages/legal/TermsOfService";
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
 import CookiePolicy from "./pages/legal/CookiePolicy";
-
+import Success from "./pages/Success";
 // Scroll automático
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -30,6 +30,7 @@ const App = () => (
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/cookies" element={<CookiePolicy />} />
+          <Route path="/success" element={<Success />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
