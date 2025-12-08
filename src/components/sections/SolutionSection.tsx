@@ -1,8 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { Clock, TrendingUp, Settings, BarChart3, ArrowRight } from "lucide-react";
+import { Clock, TrendingUp, Settings, BarChart3, ArrowRight, ArrowBigDownDash, ArrowBigDown } from "lucide-react";
 import dashboardImage from "@/assets/dashboard-preview.jpg";
 
 const SolutionSection = () => {
+  const scrollToDemos = () => {
+     const demoSection = document.getElementById("demos");
+    if (demoSection) {
+      demoSection.scrollIntoView({ behavior: "smooth" });
+    }
+    };
   const benefits = [
     {
       icon: Clock,
@@ -93,9 +99,12 @@ const SolutionSection = () => {
             <p className="text-xl mb-6 text-white/90">
               Únete a cientos de profesionales que ya automatizaron su éxito
             </p>
-            <Button size="lg" className="bg-white text-accent hover:bg-white/90 font-semibold group">
-              Solicita tu demo gratuita
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            <Button size="lg" 
+            onClick={scrollToDemos}
+            className="bg-white text-accent hover:bg-white/90 font-semibold group">
+              Prueba una demo gratuita
+              <ArrowBigDown className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
+            
             </Button>
           </div>
         </div>

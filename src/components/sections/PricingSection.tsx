@@ -38,24 +38,7 @@ const PricingSection = () => {
       // PEGA AQUÍ TU ENLACE DE STRIPE DEL PLAN PRO
       link: "https://buy.stripe.com/test_..." 
     },
-    {
-      name: "Plan Empresarial",
-      subtitle: "Negocios con múltiples sedes",
-      price: "Contacta",
-      period: "a ventas",
-      features: [
-        "Usuarios ilimitados",
-        "Gestión de múltiples ubicaciones",
-        "Soporte 24/7",
-        "Integraciones avanzadas",
-        "Reportes personalizados",
-        "Soluciones a medida"
-      ],
-      cta: "Solicita tu cotización",
-      popular: false,
-      // Para empresarial usamos mailto o un link a WhatsApp
-      link: "mailto:ventas@onbook.oncorp.io?subject=Consulta Plan Empresarial"
-    }
+   
   ];
 
   return (
@@ -70,7 +53,7 @@ const PricingSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
             <div 
               key={index}

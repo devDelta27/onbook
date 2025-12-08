@@ -7,7 +7,7 @@ const FooterSection = () => {
     producto: [
       { name: "Características", href: "/#features" },
       { name: "Precios", href: "/#pricing" },
-      { name: "Demo en vivo", href: "/#demo" },
+      { name: "Demo en vivo", href: "/#demos" },
       { name: "Integraciones", href: "/#integrations" }
     ],
     soporte: [

@@ -8,6 +8,12 @@ const FinalCTASection = () => {
       pricingSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+  const scrollToDemos = () => {
+    const demoSection = document.getElementById("demos");
+    if (demoSection) {
+      demoSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <section className="section-padding bg-gradient-to-br from-primary via-primary to-accent text-white overflow-hidden relative">
       {/* Background Elements */}
@@ -64,10 +70,11 @@ const FinalCTASection = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <Button 
+            onClick={scrollToDemos}
               size="lg" 
               className="bg-white text-primary hover:bg-white/90 font-bold px-8 py-4 rounded-xl group shadow-2xl"
             >
-              Solicita una demo gratuita
+              Probar una demo gratuita
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             

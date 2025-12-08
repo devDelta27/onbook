@@ -1,5 +1,5 @@
 import { Star, Quote, TrendingUp, Users, MapPin } from "lucide-react";
-import testimonialsImage from "@/assets/testimonials-hero.jpg";
+import testimonialsImage from "@/assets/newdash.jpg";
 
 const SocialProofSection = () => {
   const testimonials = [

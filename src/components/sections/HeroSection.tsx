@@ -8,7 +8,16 @@ const HeroSection = () => {
     if (pricingSection) {
       pricingSection.scrollIntoView({ behavior: "smooth" });
     }
+
   };
+  
+   const scrollToDemos = () => {
+     const demoSection = document.getElementById("demos");
+    if (demoSection) {
+      demoSection.scrollIntoView({ behavior: "smooth" });
+    }
+    };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with gradient overlay */}
@@ -53,7 +62,7 @@ const HeroSection = () => {
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
-            <Button size="lg" variant="ghost" className="btn-secondary group">
+            <Button size="lg" variant="ghost" className="btn-secondary group" onClick={scrollToDemos}>
               <Play className="mr-2 h-5 w-5" />
               Ver demo en vivo
             </Button>
