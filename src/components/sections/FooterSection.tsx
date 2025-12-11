@@ -91,7 +91,18 @@ const FooterSection = () => {
           <div className="md:col-span-2">
             <div className="mb-6">
               <h2 className="text-2xl font-bold text-accent mb-2">OnBook</h2>
-              <p className="text-sm text-neutral-400">by ONCORP.io</p>
+              <p className="text-sm text-neutral-400 mb-2">by ONCORP.io</p> 
+              
+              {/* CAMBIO AQUÍ: Link directo a ONCORP.io */}
+              <a 
+                href="https://oncorp.io/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-xs text-neutral-500 hover:text-accent transition-colors"
+              >
+                Visitar Web Oficial
+              </a>
+
             </div>
             <p className="text-neutral-400 mb-6 leading-relaxed">
               La plataforma de agendamiento más confiable de Latinoamérica. 
@@ -99,6 +110,7 @@ const FooterSection = () => {
             </p>
             
             {/* Contact Info */}
+           
             <div className="space-y-3 mb-6">
               <div className="flex items-center gap-3 text-sm text-neutral-400">
                 <Mail className="h-4 w-4 text-accent" />

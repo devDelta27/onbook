@@ -49,7 +49,7 @@ const Support = () => {
             </div>
             <h3 className="text-lg font-bold mb-2">Soporte Email</h3>
             <p className="text-neutral-500 mb-4 text-sm">Para consultas técnicas o de facturación.</p>
-            <Button variant="outline" className="w-full" onClick={() => window.location.href = 'mailto:soporte@onbook.oncorp.io'}>Enviar correo</Button>
+            <Button variant="outline" className="w-full" onClick={() => window.location.href = 'mailto:contacto@oncorp.io'}>Enviar correo</Button>
           </div>
         </div>
 
@@ -75,13 +75,7 @@ const Support = () => {
         </section>
 
         {/* Sección API */}
-        <section id="api" className="bg-neutral-900 text-white rounded-2xl p-8 md:p-12 text-center">
-          <h2 className="text-2xl font-bold mb-4">¿Eres desarrollador?</h2>
-          <p className="text-neutral-400 mb-8 max-w-2xl mx-auto">
-            OnBook cuenta con una API robusta para integraciones personalizadas. Actualmente el acceso está limitado a planes empresariales.
-          </p>
-          <Button className="bg-accent hover:bg-accent/90 text-white">Solicitar documentación API</Button>
-        </section>
+       
       </div>
 
       <FooterSection />
