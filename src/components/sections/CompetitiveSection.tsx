@@ -17,9 +17,9 @@ const CompetitiveSection = () => {
       othersIcon: X
     },
     {
-      feature: "Integración WhatsApp",
-      miturno: "Recordatorios automáticos por WhatsApp nativo",
-      others: "Funcionalidades limitadas o costosas integraciones",
+      feature: "Gestión múltiple",
+      miturno: "Gestión de múltiples empleados y múltiples ubicaciones",
+      others: "Funcionalidades limitadas",
       miturnoIcon: Check,
       othersIcon: X
     },
@@ -31,9 +31,9 @@ const CompetitiveSection = () => {
       othersIcon: X
     },
     {
-      feature: "Precio justo",
-      miturno: "Precios transparentes, sin sorpresas ni contratos largos",
-      others: "Costos ocultos, contratos anuales obligatorios",
+      feature: "Operatividad",
+      miturno: "Capacidad para citas recurrentes y reservas grupales",
+      others: "Menor eficiencia en la agendación de citas",
       miturnoIcon: Check,
       othersIcon: X
     }

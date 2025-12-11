@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import FooterSection from "@/components/sections/FooterSection";
-import { ArrowLeft, BookOpen, Video, MessageCircle, Mail } from "lucide-react";
+import { ArrowLeft, Video, MessageCircle, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Support = () => {
@@ -40,7 +40,7 @@ const Support = () => {
             </div>
             <h3 className="text-lg font-bold mb-2">Chat de Soporte</h3>
             <p className="text-neutral-500 mb-4 text-sm">Habla con nuestro equipo por WhatsApp.</p>
-            <Button variant="outline" className="w-full" onClick={() => window.open('https://wa.me/504XXXXXXXX', '_blank')}>Abrir WhatsApp</Button>
+            <Button variant="outline" className="w-full" onClick={() => window.open('https://wa.me/50494217777', '_blank')}>Abrir WhatsApp</Button>
           </div>
 
           <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral-100">
@@ -53,28 +53,40 @@ const Support = () => {
           </div>
         </div>
 
-        {/* Sección de Tutoriales (Placeholder) */}
+        {/* Sección de Tutoriales (Videos Reales) */}
         <section id="tutorials" className="mb-16">
-          <h2 className="text-2xl font-bold mb-8 text-neutral-900">Primeros Pasos</h2>
+          <h2 className="text-2xl font-bold mb-8 text-neutral-900">Primeros Pasos y Configuración</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="aspect-video bg-neutral-200 rounded-xl flex items-center justify-center relative group cursor-pointer overflow-hidden">
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg z-10">
-                <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-black border-b-[10px] border-b-transparent ml-1"></div>
-              </div>
-              <span className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-1 rounded-md text-sm">Tutorial 1: Configura tus horarios</span>
+            
+            {/* VIDEO 1: Configura tus horarios */}
+            <div className="aspect-video relative rounded-xl overflow-hidden shadow-xl">
+  <iframe
+    className="w-full h-full absolute top-0 left-0"
+    src="https://www.youtube.com/embed/opexrDP7wVE" // ⬅️ PON AQUÍ TU LINK EMBED
+    title="Tutorial 1: Configura tus horarios en OnBook"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  ></iframe>
+  <span className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-1 rounded-md text-sm font-medium">1. Configura tus horarios</span>
+</div>
+            
+            {/* VIDEO 2: Agrega servicios */}
+            <div className="aspect-video relative rounded-xl overflow-hidden shadow-xl">
+              <iframe
+    className="w-full h-full absolute top-0 left-0"
+    src="https://www.youtube.com/embed/Dl0Rmm_VJfQ" // ⬅️ PON AQUÍ TU LINK EMBED
+    title="Tutorial 1: Configura tus horarios en OnBook"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  ></iframe>
+              <span className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-1 rounded-md text-sm font-medium">2. Agrega servicios y personal</span>
             </div>
-            <div className="aspect-video bg-neutral-200 rounded-xl flex items-center justify-center relative group cursor-pointer overflow-hidden">
-               <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
-               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg z-10">
-                <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-black border-b-[10px] border-b-transparent ml-1"></div>
-              </div>
-              <span className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-1 rounded-md text-sm">Tutorial 2: Agrega servicios</span>
-            </div>
+
+            {/* Puedes seguir agregando más videos aquí */}
+
           </div>
         </section>
 
-        {/* Sección API */}
        
       </div>
 
