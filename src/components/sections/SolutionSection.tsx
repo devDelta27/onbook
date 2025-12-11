@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Clock, TrendingUp, Settings, BarChart3, ArrowRight, ArrowBigDownDash, ArrowBigDown } from "lucide-react";
-import dashboardImage from "@/assets/dashboard-preview.jpg";
+import dashboardImage from "@/assets/dashboard.png";
 
 const SolutionSection = () => {
   const scrollToDemos = () => {
@@ -64,7 +64,7 @@ const SolutionSection = () => {
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div id="features" className="grid md:grid-cols-2 gap-8 mb-16">
           {benefits.map((benefit, index) => {
             const IconComponent = benefit.icon;
             return (

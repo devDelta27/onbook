@@ -17,7 +17,6 @@ const PrivacyPolicy = () => {
 
       <div className="container mx-auto px-4 pb-24 max-w-4xl">
         <h1 className="text-4xl font-bold mb-2 text-primary">Política de Privacidad</h1>
-        <p className="text-muted-foreground mb-12">Última actualización: Diciembre 2024</p>
 
         <div className="space-y-8 text-neutral-600 leading-relaxed">
           <section>

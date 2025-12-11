@@ -30,7 +30,7 @@ const FAQSection = () => {
     },
     {
       question: "¿Dan soporte en español?",
-      answer: "¡Por supuesto! Nuestro equipo de soporte habla español nativo, conoce el mercado centroamericano y está disponible en horarios locales. Ofrecemos soporte por chat, email y videollamada."
+      answer: "¡Por supuesto! Nuestro equipo de soporte habla español nativo, conoce el mercado latinoamericano y está disponible en horarios locales. Ofrecemos soporte por chat, email y videollamada."
     },
     {
       question: "¿Qué pasa si tengo muchas citas?",

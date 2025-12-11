@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Scissors, Stethoscope, Dumbbell, Briefcase } from "lucide-react";
+import { ExternalLink, Scissors, Stethoscope, Hand, Sparkles } from "lucide-react";
 
 const DemosSection = () => {
   // AQUÍ ES DONDE PONDRÁS LOS LINKS DE TU DASHBOARD DE TRAFFT
@@ -9,28 +9,28 @@ const DemosSection = () => {
       description: "Gestión de doctores, expedientes y citas recurrentes para pacientes.",
       icon: Stethoscope,
       color: "bg-blue-100 text-blue-600",
-      link: "https://gianna.wlbookings.com/" // <- Pega aquí el link de tu cliente "Demo Clínica"
+      link: "https://dentalhf.wlbookings.com/" // <- Pega aquí el link de tu cliente "Demo Clínica"
     },
     {
       title: "Salones y Barberías",
       description: "Reservas visuales, selección de estilista y complementos de servicios.",
       icon: Scissors,
       color: "bg-orange-100 text-orange-600",
-      link: "#" // <- Link de tu cliente "Demo Barbería"
+      link: "https://zxcvzxc.wlbookings.com/" // <- Link de tu cliente "Demo Barbería"
     },
     {
-      title: "Fitness y Deportes",
-      description: "Clases grupales, gestión de aforos y entrenadores personales.",
-      icon: Dumbbell,
+      title: "Limpieza del Hogar", // CAMBIO 1: Nuevo Título
+      description: "Ideal para empresas de limpieza. Agenda por zonas, duración o tamaño del inmueble.",
+      icon: Sparkles, // CAMBIO 2: Nuevo Ícono (Destellos/Limpieza)
       color: "bg-green-100 text-green-600",
-      link: "#" // <- Link de tu cliente "Demo Gym"
+      link: "https://gianna.wlbookings.com/" // <- Link de tu cliente "Demo Limpieza"
     },
     {
-      title: "Servicios Profesionales",
-      description: "Ideal para abogados, consultores y contadores. Citas virtuales automáticas.",
-      icon: Briefcase,
+      title: "Belleza y Uñas", // CAMBIO 3: Nuevo Título
+      description: "Perfecto para estudios de manicura y pedicura. Muestra tus diseños y tratamientos.",
+      icon: Hand, // CAMBIO 4: Nuevo Ícono (Mano)
       color: "bg-purple-100 text-purple-600",
-      link: "#" // <- Link de tu cliente "Demo Consultoría"
+      link: "https://gabynail.wlbookings.com/" // <- Link de tu cliente "Demo Uñas"
     }
   ];
 

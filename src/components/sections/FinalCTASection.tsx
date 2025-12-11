@@ -95,19 +95,7 @@ const FinalCTASection = () => {
           </p>
 
           {/* Urgency Element */}
-          <div className="mt-12 bg-warning/20 border border-warning/30 rounded-2xl p-6 max-w-2xl mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-3">
-              <div className="w-3 h-3 bg-warning rounded-full animate-pulse"></div>
-              <h3 className="text-xl font-semibold text-warning">¡Oferta especial por tiempo limitado!</h3>
-              <div className="w-3 h-3 bg-warning rounded-full animate-pulse"></div>
-            </div>
-            <p className="text-white/90">
-              Primeros 100 clientes reciben 3 meses de Plan Pro por el precio del Esencial
-            </p>
-            <div className="text-sm text-warning font-medium mt-2">
-              ⏰ Solo quedan 23 cupos disponibles
-            </div>
-          </div>
+         
         </div>
       </div>
     </section>

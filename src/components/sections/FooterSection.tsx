@@ -8,13 +8,13 @@ const FooterSection = () => {
       { name: "Características", href: "/#features" },
       { name: "Precios", href: "/#pricing" },
       { name: "Demo en vivo", href: "/#demos" },
-      { name: "Integraciones", href: "/#integrations" }
+      // { name: "Integraciones", href: "/#integrations" }
     ],
     soporte: [
-      { name: "Centro de ayuda", href: "/#help" },
-      { name: "Tutoriales", href: "/#tutorials" },
-      { name: "API Docs", href: "/#api" },
-      { name: "Estado del sistema", href: "/#status" }
+      { name: "Centro de ayuda", href: "/support" },
+      // { name: "Tutoriales", href: "/support#tutorials" }, // Lleva a la sección de videos
+      // { name: "API Docs", href: "/support#api" },         // Lleva a la sección de API
+      { name: "Estado del sistema", href: "/status" }     // Lleva a la página de status
     ],
     // AQUÍ ESTÁ LA CLAVE: Rutas absolutas con "/" al inicio
     legal: [
@@ -24,12 +24,7 @@ const FooterSection = () => {
     ]
   };
 
-  const socialLinks = [
-    { name: "Facebook", icon: Facebook, href: "#" },
-    { name: "Instagram", icon: Instagram, href: "#" },
-    { name: "LinkedIn", icon: Linkedin, href: "#" },
-    { name: "Twitter", icon: Twitter, href: "#" }
-  ];
+  
 
   // Función auxiliar para saber si es un link interno (router) o externo (ancla/http)
   const renderLink = (link: { name: string; href: string }) => {
@@ -99,7 +94,7 @@ const FooterSection = () => {
               <p className="text-sm text-neutral-400">by ONCORP.io</p>
             </div>
             <p className="text-neutral-400 mb-6 leading-relaxed">
-              La plataforma de agendamiento más confiable de Centroamérica. 
+              La plataforma de agendamiento más confiable de Latinoamérica. 
               Automatiza tu operación y enfócate en hacer crecer tu negocio.
             </p>
             
@@ -107,33 +102,20 @@ const FooterSection = () => {
             <div className="space-y-3 mb-6">
               <div className="flex items-center gap-3 text-sm text-neutral-400">
                 <Mail className="h-4 w-4 text-accent" />
-                hola@onbook.oncorp.io
+                Contacto@oncorp.io
               </div>
               <div className="flex items-center gap-3 text-sm text-neutral-400">
                 <Phone className="h-4 w-4 text-accent" />
-                +506 2200-3040
+                +504 9421 7777
               </div>
               <div className="flex items-center gap-3 text-sm text-neutral-400">
                 <MapPin className="h-4 w-4 text-accent" />
-                San José, Costa Rica
+                Tegucigalpa, Honduras
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-4">
-              {socialLinks.map((social, index) => {
-                const IconComponent = social.icon;
-                return (
-                  <a
-                    key={index}
-                    href={social.href}
-                    className="w-10 h-10 bg-neutral-800 rounded-xl flex items-center justify-center hover:bg-accent transition-colors group"
-                  >
-                    <IconComponent className="h-5 w-5 text-neutral-400 group-hover:text-white" />
-                  </a>
-                );
-              })}
-            </div>
+           
           </div>
 
           {/* Links Sections */}
@@ -175,7 +157,7 @@ const FooterSection = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-neutral-400">
-              © 2024 OnBook by ONCORP.io. Todos los derechos reservados.
+              © 2025 OnBook by ONCORP.io. Todos los derechos reservados.
             </div>
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2 text-xs text-neutral-500">

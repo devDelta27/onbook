@@ -61,7 +61,7 @@ const SocialProofSection = () => {
             Ellos ya lo lograron
           </h2>
           <p className="text-section-subtitle">
-            Únete a los cientos de negocios en Centroamérica que ya transformaron 
+            Únete a los cientos de negocios en Latinoamérica que ya transformaron 
             su operación con <span className="font-semibold text-accent">OnBook</span>
           </p>
         </div>
@@ -153,18 +153,8 @@ const SocialProofSection = () => {
             </div>
             Datos protegidos SSL
           </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <div className="w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center">
-              <div className="w-3 h-3 bg-accent rounded-full"></div>
-            </div>
-            Integración con Stripe
-          </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center">
-              <div className="w-3 h-3 bg-primary rounded-full"></div>
-            </div>
-            Certificado Google
-          </div>
+          
+          
         </div>
       </div>
     </section>
