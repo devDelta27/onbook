@@ -102,7 +102,7 @@ const FooterSection = () => {
             <div className="space-y-3 mb-6">
               <div className="flex items-center gap-3 text-sm text-neutral-400">
                 <Mail className="h-4 w-4 text-accent" />
-                Contacto@oncorp.io
+                contacto@oncorp.io
               </div>
               <div className="flex items-center gap-3 text-sm text-neutral-400">
                 <Phone className="h-4 w-4 text-accent" />
