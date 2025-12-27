@@ -15,6 +15,7 @@ import CookiePolicy from "./pages/legal/CookiePolicy";
 import Success from "./pages/Success";
 // Scroll automático
 import ScrollToTop from "./components/ScrollToTop";
+import RefundPolicy from "./pages/legal/RefundPolicy";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/cookies" element={<CookiePolicy />} />
+          <Route path="/refund" element={<RefundPolicy />} />
           <Route path="/success" element={<Success />} />
           <Route path="/support" element={<Support />} />
           <Route path="/status" element={<Status />} />

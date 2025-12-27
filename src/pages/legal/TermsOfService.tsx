@@ -19,7 +19,13 @@ const TermsOfService = () => {
       {/* Contenido Legal */}
       <div className="container mx-auto px-4 pb-24 max-w-4xl">
         <h1 className="text-4xl font-bold mb-2 text-primary">Términos de Uso</h1>
-
+    <div className="space-y-8 text-neutral-600 leading-relaxed">
+          <section>
+            <h2 className="text-xl font-semibold text-primary mb-4">Identidad y Titularidad del Sitio</h2>
+            <p>El presente sitio web y la plataforma de servicios ofrecida bajo la marca OnBook son propiedad exclusiva de, y operados por, OnCorp. Al acceder a nuestros servicios, usted reconoce que cualquier relación comercial, legal o contractual se establece directamente con OnCorp, siendo OnBook el nombre comercial designado para nuestra solución de gestión de citas y automatización empresarial.</p>
+          </section>
+          </div>
+          <br />
         <div className="space-y-8 text-neutral-600 leading-relaxed">
           <section>
             <h2 className="text-xl font-semibold text-primary mb-4">1. Aceptación de los Términos</h2>
@@ -52,7 +58,7 @@ const TermsOfService = () => {
           <section>
             <h2 className="text-xl font-semibold text-primary mb-4">5. Propiedad Intelectual</h2>
             <p>
-              Todo el contenido, marcas registradas, logotipos y software presentes en OnBook son propiedad exclusiva de ONCORP.io o sus licenciantes y están protegidos por las leyes de propiedad intelectual internacionales.
+              Todo el contenido, marcas registradas, logotipos y software presentes en OnBook son propiedad exclusiva de OnCorp.io o sus licenciantes y están protegidos por las leyes de propiedad intelectual internacionales.
             </p>
           </section>
 

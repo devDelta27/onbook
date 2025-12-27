@@ -20,7 +20,9 @@ const FooterSection = () => {
     legal: [
       { name: "Términos de uso", href: "/terms" },
       { name: "Política de privacidad", href: "/privacy" },
+      { name: "Política de Reembolso", href: "/refund" },
       { name: "Cookies", href: "/cookies" },
+      
     ]
   };
 
@@ -91,7 +93,7 @@ const FooterSection = () => {
           <div className="md:col-span-2">
             <div className="mb-6">
               <h2 className="text-2xl font-bold text-accent mb-2">OnBook</h2>
-              <p className="text-sm text-neutral-400 mb-2">by ONCORP.io</p> 
+              <p className="text-sm text-neutral-400 mb-2">by OnCorp.io</p> 
               
               {/* CAMBIO AQUÍ: Link directo a ONCORP.io */}
               <a 
@@ -100,7 +102,7 @@ const FooterSection = () => {
                 rel="noopener noreferrer" 
                 className="text-xs text-neutral-500 hover:text-accent transition-colors"
               >
-                Visitar Web Oficial
+                Visitar Web Oficial de OnCorp
               </a>
 
             </div>
@@ -169,7 +171,7 @@ const FooterSection = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-neutral-400">
-              © 2025 OnBook by ONCORP.io. Todos los derechos reservados.
+              © 2025 OnBook by OnCorp.io. Todos los derechos reservados.
             </div>
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2 text-xs text-neutral-500">

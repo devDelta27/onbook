@@ -96,7 +96,7 @@ const CompetitiveSection = () => {
               <div className="text-center">
                 <div className="bg-accent/20 rounded-xl p-4">
                   <h3 className="text-xl font-bold text-accent">OnBook</h3>
-                  <p className="text-sm text-white/80">by ONCORP.io</p>
+                  <p className="text-sm text-white/80">by OnCorp.io</p>
                 </div>
               </div>
               <div className="text-center">
