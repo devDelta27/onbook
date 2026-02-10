@@ -1,182 +1,157 @@
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Check, Star, ArrowRight, Phone, Loader2 } from "lucide-react";
-import { getPaddleInstance } from "@/lib/paddle";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { Check, X } from 'lucide-react';
+
+const plans = [
+  {
+    name: 'Plan Esencial',
+    price: '10', // Precio basado en tu imagen
+    currency: '$',
+    description: 'Para profesionales independientes.',
+    features: [
+      '1 Usuario / 1 Sede',
+      'Citas y Clientes Ilimitados',
+      'Notificaciones por Email',
+      'Cupones y Campos Personalizados',
+      'Sync Calendario (Solo Apple)',
+      'Reviews y Calificaciones'
+    ],
+    notIncluded: [
+      'WhatsApp',
+      'Pagos en línea',
+      'Reservas Grupales'
+    ],
+    // REEMPLAZA CON TU LINK DE SHOPIFY PARA EL PLAN DE $10
+    shopifyUrl: 'https://b22dma-ds.myshopify.com/products/plan-esencial?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web',
+    highlight: false,
+    buttonText: 'Comenzar'
+  },
+  {
+    name: 'Plan Pro',
+    price: '14',
+    currency: '$',
+    description: 'El estándar para clínicas y negocios.',
+    features: [
+      'Hasta 5 Usuarios / 1 Sede',
+      'Todo lo del Esencial',
+      'Integración WhatsApp',
+      'Pagos (Stripe / PayPal)',
+      'Reservas Grupales y Recurrentes',
+      'Sync Google Calendar / Outlook',
+      'Integración Zoom / Google Meet'
+    ],
+    notIncluded: [
+      'API y Webhooks',
+      'Zapier',
+      'Facebook Pixel'
+    ],
+    // REEMPLAZA CON TU LINK DE SHOPIFY PARA EL PLAN DE $14
+    shopifyUrl: 'https://b22dma-ds.myshopify.com/products/plan-pro?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web',
+    highlight: true,
+    buttonText: 'Obtener Pro'
+  },
+  {
+    name: 'Plan Enterprise',
+    price: '20',
+    currency: '$',
+    description: 'Automatización total y sin límites.',
+    features: [
+      'Usuarios Ilimitados',
+      'Sedes Múltiples',
+      'Todo lo del Pro',
+      'API y Webhooks',
+      'Automatización con Zapier',
+      'Facebook Pixel',
+      'Días Especiales / Feriados'
+    ],
+    notIncluded: [],
+    // REEMPLAZA CON TU LINK DE SHOPIFY PARA EL PLAN DE $20
+    shopifyUrl: 'https://b22dma-ds.myshopify.com/products/plan-enterprise?utm_source=copyToPasteBoard&utm_medium=product-links&utm_content=web',
+    highlight: false,
+    buttonText: 'Comenzar' // O "Comprar Enterprise"
+  }
+];
 
 const PricingSection = () => {
-  const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
-
-  // Inicializamos Paddle apenas carga la página
-  useEffect(() => {
-    getPaddleInstance();
-  }, []);
-
-  // Función para abrir el checkout
-  const handleCheckout = async (priceId: string) => {
-    setLoading(true);
-    try {
-      const paddle = await getPaddleInstance();
-      
-      if (paddle) {
-        paddle.Checkout.open({
-          items: [{ priceId: priceId, quantity: 1 }],
-          // Después de pagar, Paddle nos avisa aquí
-          settings: {
-            successUrl: window.location.origin + "/success", // Redirige a tu página de éxito
-          }
-        });
-      }
-    } catch (error) {
-      console.error("Error abriendo checkout:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const plans = [
-    {
-      name: "Plan Esencial",
-      subtitle: "Ideal para profesionales independientes",
-      price: "$10",
-      period: "USD / mes",
-      features: [
-        "1 usuario incluido",
-        "Citas ilimitadas",
-        "Sincronización con calendario",
-        "Notificaciones básicas",
-        "Soporte por email"
-      ],
-      cta: "Suscribirse",
-      popular: false,
-      // ⚠️ PEGA AQUÍ EL PRICE ID DE PADDLE (Empieza con pri_...)
-      paddlePriceId: "pri_01kc2gp152pa0fyrnnyeay71cd" 
-    },
-    {
-      name: "Plan Pro",
-      subtitle: "Equipos en crecimiento",
-      price: "$18",
-      period: "USD / mes",
-      features: [
-        "5 usuarios incluidos",
-        "Recordatorios por WhatsApp",
-        "Reportes de ingresos",
-        "Control de pagos",
-        "Múltiples servicios",
-        "Soporte prioritario"
-      ],
-      cta: "Suscribirse",
-      popular: true,
-      // ⚠️ PEGA AQUÍ EL PRICE ID DE PADDLE DEL PLAN PRO
-      paddlePriceId: "pri_01kc2gp152pa0fyrnnyeay71cd"
-    },
-   
-  ];
-
   return (
-    <section id="pricing" className="section-padding section-gradient">
+    <section id="pricing" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-section-title mb-6">
-            Elige tu plan. <span className="text-accent">Crece con nosotros</span>
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl font-bold mb-4 text-gray-900">
+            Planes flexibles para cada etapa
           </h2>
-          <p className="text-section-subtitle">
-            Pago seguro internacional. Aceptamos tarjetas de crédito y débito sin crear cuenta.
+          <p className="text-xl text-gray-600">
+            Elige la potencia que tu negocio necesita hoy.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {plans.map((plan, index) => (
+        {/* Grid ajustado para 3 columnas en pantallas grandes (lg:grid-cols-3) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {plans.map((plan) => (
             <div 
-              key={index}
-              className={`pricing-card flex flex-col justify-between ${plan.popular ? 'featured' : ''}`}
+              key={plan.name}
+              className={`relative bg-white rounded-2xl shadow-xl overflow-hidden border-2 flex flex-col ${
+                plan.highlight ? 'border-blue-600 transform md:-translate-y-4 z-10' : 'border-transparent'
+              }`}
             >
-              <div>
-                {/* Header */}
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                  <p className="text-muted-foreground mb-6">{plan.subtitle}</p>
-                  
-                  <div className="mb-6">
-                    <div className="flex items-baseline justify-center gap-2">
-                      <span className="text-4xl font-bold">{plan.price}</span>
-                      <span className="text-muted-foreground">{plan.period}</span>
-                    </div>
-                  </div>
-
-                  {/* Lógica de Botones */}
-                  <div className="min-h-[50px]">
-                    {plan.paddlePriceId ? (
-                      <Button 
-                        className={`w-full ${plan.popular ? 'btn-hero' : 'bg-primary hover:bg-primary/90'}`}
-                        disabled={loading}
-                        onClick={() => handleCheckout(plan.paddlePriceId!)}
-                      >
-                        {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-                        {plan.cta}
-                        {!loading && <ArrowRight className="ml-2 h-4 w-4" />}
-                      </Button>
-                    ) : (
-                      <Button 
-                        className={`w-full ${plan.popular ? 'btn-hero' : 'bg-primary hover:bg-primary/90'}`}
-                        onClick={() => window.location.href = "mailto:ventas@onbook.oncorp.io"}
-                      >
-                        {plan.cta}
-                        <Phone className="ml-2 h-4 w-4" />
-                      </Button>
-                    )}
-                  </div>
-                  
-                  {plan.paddlePriceId && (
-                    <p className="text-xs text-neutral-400 mt-3 flex items-center justify-center gap-1">
-                      <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                      Procesado seguro por Paddle
-                    </p>
-                  )}
+              {plan.highlight && (
+                <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                  RECOMENDADO
+                </div>
+              )}
+              
+              <div className="p-8 flex-grow">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                <p className="text-gray-600 mb-6 text-sm h-10">{plan.description}</p>
+                
+                <div className="flex items-baseline mb-8">
+                  <span className="text-5xl font-extrabold text-gray-900">
+                    {plan.currency}{plan.price}
+                  </span>
+                  <span className="text-gray-600 ml-2">/mes</span>
                 </div>
 
-                {/* Features */}
                 <div className="space-y-4 mb-8">
-                  {plan.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-5 h-5 bg-success/10 rounded-full flex items-center justify-center mt-0.5">
-                        <Check className="h-3 w-3 text-success" />
-                      </div>
-                      <span className="text-sm text-muted-foreground leading-relaxed">
-                        {feature}
-                      </span>
+                  {/* Características Incluidas */}
+                  {plan.features.map((feature) => (
+                    <div key={feature} className="flex items-start">
+                      <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </div>
+                  ))}
+                  
+                  {/* Características NO Incluidas (Visualmente atenuadas) */}
+                  {plan.notIncluded.map((feature) => (
+                    <div key={feature} className="flex items-start opacity-50">
+                      <X className="h-5 w-5 text-gray-400 mr-2 flex-shrink-0" />
+                      <span className="text-gray-500 text-sm line-through">{feature}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Popular Badge */}
-              {plan.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-accent text-white text-sm font-medium px-4 py-1 rounded-full flex items-center gap-1">
-                    <Star className="h-3 w-3" />
-                    Más Popular
-                  </div>
-                </div>
-              )}
+              {/* Botón al final del card */}
+              <div className="p-8 pt-0 mt-auto">
+                <a 
+                  href={plan.shopifyUrl}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={`block w-full text-center py-4 px-6 rounded-xl font-bold transition-all duration-200 ${
+                    plan.highlight
+                      ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-xl'
+                      : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                  }`}
+                >
+                  {plan.buttonText}
+                </a>
+              </div>
             </div>
           ))}
         </div>
-
-        {/* Money Back Guarantee */}
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-4 bg-white rounded-2xl p-6 shadow-card">
-            <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center">
-              <Check className="h-8 w-8 text-success" />
-            </div>
-            <div className="text-left">
-              <h4 className="font-semibold text-lg mb-1">Garantía de Satisfacción</h4>
-              <p className="text-muted-foreground">
-                Cancela tu suscripción en cualquier momento con un solo clic.
-              </p>
-            </div>
-          </div>
+        
+        <div className="mt-12 text-center">
+          <p className="text-gray-500 text-sm">
+            * Todos los planes incluyen actualizaciones de seguridad y soporte técnico.
+          </p>
         </div>
       </div>
     </section>
